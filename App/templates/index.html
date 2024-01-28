@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Prediction with OpenCV and Keras</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #495057;
+            margin-bottom: 20px;
+        }
+
+        #videoFeed {
+            width: 70%;
+            max-width: 800px;
+            border: 2px solid #343a40;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Age Prediction App</h1>
+    <button onclick="toggleAgePrediction()">Start/Stop Age Prediction</button>
+    <br>
+    <img id="videoFeed" alt="Video Stream">
+    
+    <script>
+        function toggleAgePrediction() {
+            fetch('/start_stop_age_prediction')
+                .then(response => response.text())
+                .then(message => console.log(message));
+        }
+
+        // Continuously update the video feed
+        setInterval(() => {
+            document.getElementById('videoFeed').src = "{{ url_for('video_feed') }}?t=" + new Date().getTime();
+        }, 1000);  // Update every second
+    </script>
+</body>
+</html>
