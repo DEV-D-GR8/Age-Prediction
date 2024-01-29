@@ -1,4 +1,4 @@
 flask
-keras
+opencv-python
 numpy
 tensorflow
