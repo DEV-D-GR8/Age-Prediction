@@ -12,7 +12,7 @@ face_cascade = cv2.CascadeClassifier(
 )
 
 # Load age prediction model
-model = load_model("App/model/best1.h5")
+model = load_model("model/best1.h5")
 class_labels = ["1-15", "16-25", "26-30", "31-35", "36-45", "46-60", "60-116"]
 
 def preprocess_image(face_image):
@@ -74,7 +74,7 @@ def generate_frames():
 
 @app.route('/')
 def index():
-    return render_template('App/templates/index.html')
+    return render_template('templates/index.html')
 
 age_prediction_enabled = False
 
