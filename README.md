@@ -52,6 +52,9 @@ Open your web browser and navigate to [http://localhost:5000](http://localhost:5
 5. **Test the Real-Time Prediction:**
 Access the webcam through the web interface and observe real-time face detection with age predictions displayed above the detected faces.
 
+## YouTube Demonstration 
+[Click here to watch the demo video on YouTube](https://youtu.be/f0SGayRxaWw?si=DLX9WD_jX0HSC0-m)
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
